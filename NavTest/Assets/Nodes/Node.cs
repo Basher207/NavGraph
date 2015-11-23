@@ -28,7 +28,7 @@ public class Node : MonoBehaviour {
 	[HideInInspector] public List <Node> connectedNodes;
 
 
-
+	//static long counter = 0;
 	public static List <Node> nodeInstances;
 	void Awake () {
 		if (nodeInstances == null)
@@ -54,6 +54,10 @@ public class Node : MonoBehaviour {
 		visited.Add (this);
 		nodesDictionary = nodesDistances (visited, 0f, this);
 	}
+	//void Update () {
+	//	if (Input.GetMouseButtonDown (0))
+	//		print (counter);
+	//}
 	public Node NextTarget (Node mainTarget) {
 		for (int i = 0; i < nodesDictionary.Count; i++) {
 			int index;
@@ -90,6 +94,7 @@ public class Node : MonoBehaviour {
 		if (caller != this)
 			for (int i = 0; i < distances.Count; i++)
 				distances [i].nodes.nextNode = this;
+		//counter++;
 		return distances;
 	}
 	public static bool TargetContained (List <NodeDistance> distances, Node mainTarget, out int index, bool targetNode = true) {
