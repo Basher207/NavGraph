@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+
 [RequireComponent (typeof (SphereCollider))]
 public class Node : MonoBehaviour {
 	#region structs 
@@ -24,7 +25,7 @@ public class Node : MonoBehaviour {
 	}
 	#endregion
 
-	[HideInInspector] List <NodeDistance> nodesDictionary;
+	[SerializeField] List <NodeDistance> nodesDictionary;
 	[HideInInspector] public List <Node> connectedNodes;
 
 
@@ -39,9 +40,7 @@ public class Node : MonoBehaviour {
 				Vector3 delta = nodeInstances[i].transform.position - transform.position;
 				RaycastHit [] hit = Physics.RaycastAll (transform.position, delta, delta.magnitude);
 				if (hit.Length == 1) {
-					if (!connectedNodes.Contains (nodeInstances[i]))
 						 connectedNodes.Add (nodeInstances[i]);
-					if (!nodeInstances [i].connectedNodes.Contains (this))
 						 nodeInstances [i].connectedNodes.Add (this);
 				}
 			}

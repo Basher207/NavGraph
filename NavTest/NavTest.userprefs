@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Nodes/Node.cs">
     <Files>
-      <File FileName="Assets/Nodes/Node.cs" Line="96" Column="10" />
+      <File FileName="Assets/Nodes/Node.cs" Line="55" Column="3" />
+      <File FileName="Assets/Nodes/MovementScript.cs" Line="14" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
